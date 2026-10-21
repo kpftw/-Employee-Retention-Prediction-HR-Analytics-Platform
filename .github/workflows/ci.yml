@@ -1,0 +1,32 @@
+name: HR Analytics Employee Retention CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Data Loader & Training Smoke Test
+      run: |
+        python -c "from src.data_loader import load_or_generate_data; df = load_or_generate_data(); print(df.shape)"
+
+    - name: Run PyTest Suite
+      run: |
+        pytest tests/

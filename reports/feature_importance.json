@@ -1,0 +1,12 @@
+[
+  {"feature": "OverTime_Yes", "importance": 0.185},
+  {"feature": "MonthlyIncome", "importance": 0.142},
+  {"feature": "Workload_Score", "importance": 0.121},
+  {"feature": "Age", "importance": 0.098},
+  {"feature": "TotalWorkingYears", "importance": 0.084},
+  {"feature": "Job_Stability_Score", "importance": 0.076},
+  {"feature": "DistanceFromHome", "importance": 0.065},
+  {"feature": "YearsAtCompany", "importance": 0.052},
+  {"feature": "YearsInCurrentRole", "importance": 0.041},
+  {"feature": "YearsSinceLastPromotion", "importance": 0.036}
+]
